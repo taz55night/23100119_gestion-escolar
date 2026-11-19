@@ -1,0 +1,204 @@
+:root {
+    /*colores principales*/
+    --verde-oscuro: #1b4332;
+    --verde-medio: #2d6a4f;
+    --verde-claro: #40916c;
+    --verde-suave: #d8f3dc;
+    --fondo: #f0f7f4;
+    --blanco: #ffffff;
+    --texto: #1e293b;
+    --borde: #b7e4c7;
+}
+
+/*bordes y margenes*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Estilos generales */
+body {
+    background-color: var(--fondo);
+    color: var(--texto);
+}
+/* Barra superior */
+.top-bar {
+    background-color: var(--verde-oscuro);
+    color: var(--blanco);
+    text-align: center;
+    padding: 1.2rem;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+/* Contenedor principal */
+.contenedor-principal {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5rem;
+    max-width: 1300px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+/* Paneles */
+.panel {
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(27, 67, 50, 0.08);
+}
+/* Paneles de encabezado */
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--verde-suave);
+    padding-bottom: 0.7rem;
+}
+/* Títulos */
+h2 {
+    color: var(--verde-oscuro);
+    font-size: 1.15rem;
+}
+/* Badges */
+.badge-auto {
+    background-color: var(--verde-suave);
+    color: var(--verde-oscuro);
+    padding: 0.3rem 0.7rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Tabla */
+.tabla-responsive {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--verde-suave);
+    font-size: 0.92rem;
+}
+/* Encabezados de tabla */
+th {
+    background-color: var(--verde-medio);
+    color: var(--blanco);
+}
+/* Filas de tabla */
+tr:hover {
+    background-color: #f6fbf8;
+}
+/* Select de estado */
+.select-estado {
+    padding: 0.35rem 0.5rem;
+    border-radius: 6px;
+    border: 1px solid var(--verde-claro);
+    background-color: var(--verde-suave);
+    color: var(--verde-oscuro);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Formulario */
+.panel-formulario h2 {
+    margin-bottom: 1.2rem;
+    border-bottom: 2px solid var(--verde-suave);
+    padding-bottom: 0.7rem;
+}
+/* Campos del formulario */
+.campo {
+    margin-bottom: 1rem;
+}
+/* Etiquetas de los campos */
+.campo label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--verde-oscuro);
+    margin-bottom: 0.4rem;
+}
+/* Inputs y selects del formulario */
+.campo input, .campo select {
+    width: 100%;
+    padding: 0.65rem;
+    border: 1px solid var(--borde);
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+/* Efecto de enfoque en inputs y selects */
+.campo input:focus, .campo select:focus {
+    outline: none;
+    border-color: var(--verde-medio);
+    box-shadow: 0 0 0 3px var(--verde-suave);
+}
+/* Botones del formulario */
+.botones-form {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1.2rem;
+}
+/* Botones generales */
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+/* Botón primario */
+.btn-primario {
+    flex: 1;
+    background-color: var(--verde-medio);
+    color: var(--blanco);
+    padding: 0.75rem;
+}
+/* Efecto hover para el botón primario */
+.btn-primario:hover {
+    background-color: var(--verde-oscuro);
+}
+/* Botón secundario */
+.btn-secundario {
+    background-color: #64748b;
+    color: var(--blanco);
+    padding: 0.75rem 1rem;
+}
+/* Efecto hover para el botón secundario */
+.btn-accion {
+    padding: 0.4rem 0.65rem;
+    font-size: 0.8rem;
+    margin-right: 0.3rem;
+}
+/* Botón de editar */
+.btn-editar {
+    background-color: var(--verde-claro);
+    color: var(--blanco);
+}
+/* Botón de eliminar */
+.btn-eliminar {
+    background-color: #dc2626;
+    color: var(--blanco);
+}
+/* Efecto hover para botones de acción */
+.alerta {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #dc2626;
+    min-height: 1.2rem;
+}
+
+@media (max-width: 900px) {
+    .contenedor-principal {
+        grid-template-columns: 1fr;
+    }
+}

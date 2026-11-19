@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestión de Actividades Escolares</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- titulo del sistema -->
+    <header class="top-bar">
+        <h1>SISTEMA DE GESTIÓN DE ACTIVIDADES ESCOLARES</h1>
+    </header>
+
+    <main class="contenedor-principal">
+        <!-- tabla de actividades en la izquierda -->
+        <section class="panel panel-tabla">
+            <div class="panel-header">
+                <h2>TABLA PRINCIPAL</h2>
+                <span class="badge-auto">Actualización Automática</span>
+            </div>
+            <div class="tabla-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Actividad</th>
+                            <th>Materia</th>
+                            <th>Prioridad</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpoTabla">
+                        <!-- filas generadas por script.js -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- registro y edición -->
+        <section class="panel panel-formulario">
+            <h2 id="tituloFormulario">REGISTRAR ACTIVIDAD</h2>
+            <form id="formActividad">
+                <input type="hidden" id="actividadId">
+
+                <div class="campo">
+                    <label for="nombre">NOMBRE DE LA ACTIVIDAD</label>
+                    <input type="text" id="nombre" placeholder="Ej. Examen de Matemáticas">
+                </div>
+
+                <div class="campo">
+                    <label for="materia">MATERIA</label>
+                    <input type="text" id="materia" placeholder="Ej. Matemáticas">
+                </div>
+                <!-- campos de prioridad -->
+                <div class="campo">
+                    <label for="prioridad">PRIORIDAD</label>
+                    <select id="prioridad">
+                        <option value="1">Alta</option>
+                        <option value="2" selected>Media</option>
+                        <option value="3">Baja</option>
+                    </select>
+                </div>
+
+                <!-- estados de actividad -->
+                <div class="campo" id="campoEstadoContainer" style="display: none;">
+                    <label for="estado">ESTADO</label>
+                    <select id="estado">
+                        <option value="1">Pendiente</option>
+                        <option value="2">En proceso</option>
+                        <option value="3">Completada</option>
+                    </select>
+                </div>
+
+                <div id="mensajeAlerta" class="alerta"></div>
+
+                <div class="botones-form">
+                    <button type="submit" id="btnGuardar" class="btn-primario">REGISTRAR</button>
+                    <button type="button" id="btnCancelar" class="btn-secundario" style="display: none;">CANCELAR</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
